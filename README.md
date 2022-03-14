@@ -1,30 +1,35 @@
 # Glue42 Server Example
 
-In this example we will demonstrate how to customize Glue42 Server with a custom **authenticator** and a custom **groups** service object.
+This example demonstrates how to customize Glue42 Server with a custom **authenticator** and a custom **groups servoce** object.
 
 We will also start a customized Admin UI and configure Glue42 Enterprise to use a custom login page.
 
-Note that for the simplicity of the example we're using tokens that encode the username; in a real world scenario you should leverage the auth flow to an identity platform.
+* Note that for the simplicity of the example we will use tokens that encode the username; in a real world scenario you should leverage the auth flow to an identity platform.
 
 ## Customized Glue42 Server
 
-Each request to the server goes through the custom **authenticator** that should authenticate/authorizes the user. Usually the **authenticator** would use a 3-rd party lib to validate the request (by validating token, using sspi libs, etc); If successful the authenticator must return a User object corresponding the user making the request. This object contains the user **id** and an array of **groups** that this user belongs to. Based on those groups the server determines the list of applications and layouts that should be returned to the user.
+Each request to the server goes through the custom **authenticator** that should authenticate/authorize the user. Usually the **authenticator** would use a 3-rd party lib to validate the request (by validating token, using sspi libs, etc); 
+
+If successful the **authenticator** must return an object corresponding the user making the request. This object contains the user **id** and an array of **groups** that this user belongs to. Based on those groups the server determines the list of applications and layouts that should be returned to the user.
 
 In this example the "tokens" passed to the server are simply the username encoded in the following format `user:<USERNAME>`;
 
-The list of initial users & groups are hardcoded in server/src/data.ts file.
+The list of initial users & groups are hardcoded in the example.
 
 ## Custom Login Screen
 
-Glue42 Enterprise allows showing a login screen before the first application is loaded. This is useful if you have shared authentication between your apps (SSO) and you want the user to log in just once. To allow the user access after authenticating, you must signal Glue42 Enterprise that the authentication process is complete. Use the authDone() method of the glue42gd object which is injected in the global window object. For more info on check our docs [Login Screen](https://docs.glue42.com/getting-started/how-to/rebrand-glue42/functionality/index.html#login_screen)
+Glue42 Enterprise allows showing a login screen before the first application is loaded. This page should authenticate the user and signal Glue42 Enterprise that the authentication process is complete. 
 
-In this example the login form will produce a "token" based on the email entered, the password is ignored.
+In this example the login form will produce a "token" based on the submitted email.
 
+For more info on customizing the login screen check our docs [Login Screen](https://docs.glue42.com/getting-started/how-to/rebrand-glue42/functionality/index.html#login_screen)
 ## Admin UI
 
-Users that belong to a special group (GLUE42_SERVER_ADMIN) can access administrative APIs and therefore use the administrative UI.
+Users that belong to a special group (**GLUE42_SERVER_ADMIN**) can access administrative APIs and therefore use the administrative UI.
 
-In this example the Administrative UI is customized with a custom **authenticator** that produces a token with 
+In this example the Administrative UI is customized with a custom **authenticator** that always produces a token with for a user that is part of that group.
+
+In a real world scenario you would need to implement a real **authenticator** or define the administrative UI as an application in Glue42 and access it from there.
 
 ## Configure Glue42 Enterprise
 
@@ -47,7 +52,7 @@ This will add the Glue42 Server as an additional application store. If you want 
 This will also instruct Glue42 Enterprise to store Layouts and Application Preferences on the Glue42 Server.
 
 ### ... to use a custom login screen
-To enable the login screen, use the "ssoAuth" top-level key
+To enable the custom login screen, use the "ssoAuth" top-level key
 
 ```json
 {
