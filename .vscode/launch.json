@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [           
+        {
+            "type": "node",
+            "cwd": "${workspaceFolder}/server",
+            "request": "launch",
+            "name": "Debug server",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/server/src/index.js",
+            "outFiles": [
+                "${workspaceFolder}/server/src/**/*.js"
+            ],
+            "preLaunchTask":"build-server",
+            "console": "integratedTerminal"
+        }      
+    ]
+}
