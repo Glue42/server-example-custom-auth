@@ -1,8 +1,8 @@
 # Glue42 Server Example
 
-This example demonstrates how to customize Glue42 Server with a custom **authenticator** and a custom **groups servoce** object.
+This example demonstrates how to customize Glue42 Server with a custom **authenticator** and a custom **groups service**.
 
-We will also start a customized Admin UI and configure Glue42 Enterprise to use a custom login page.
+We will also start a customized Admin UI and configure Glue42 Enterprise to use a custom Login Screen.
 
 * Note that for the simplicity of the example we will use tokens that encode the username; in a real world scenario you should leverage the auth flow to an identity platform.
 
