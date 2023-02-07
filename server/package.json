@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/kirilpopov/server-example#readme",
   "dependencies": {
-    "@glue42/server": "^0.8.3",
+    "@glue42/server": "^0.12.0",
     "@glue42/server-api": "^0.7.5"
   },
   "devDependencies": {
