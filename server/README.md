@@ -9,7 +9,9 @@ registry=https://registry.npmjs.org
 //glue42.jfrog.io/artifactory/api/npm/default-npm-virtual/:always-auth=true
 ```
 
-2. Execute 
+2. Make sure you have a MongoDB  running at **mongodb://localhost:27017/server** (you can change the connection string in the server.ts file if needed or switch to another database)
+
+3. Execute 
 ```sh
 npm i
 npm run start

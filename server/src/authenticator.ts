@@ -3,10 +3,11 @@ import { User, Token } from "@glue42/server-api";
 import { Request, Response } from "express";
 import { users } from "./data";
 
+// Custom authenticator that validates a token and returns the user info
 export class Authenticator implements CustomAuthenticator {
 
-
     initialize(): void {
+        // initialization point
     }
 
     authenticate(req: Request, res: Response, next: (err?: Error, info?: User) => void, token?: Token): void {

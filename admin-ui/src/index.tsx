@@ -8,8 +8,7 @@ import "@glue42/server-admin-ui/dist/src/styles/index.css";
 import "@ag-grid-community/core/dist/styles/ag-grid.css";
 import { CustomAuthProvider } from './auth';
 require('react-dom');
-(window as any).React2 = require('react');
-console.log((window as any).React1 === (window as any).React2);
+
 
 ReactDOM.render(
   <React.StrictMode>

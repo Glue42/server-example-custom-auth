@@ -4,12 +4,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         const element = document.getElementById(`email`);
         element.value = user;
     }
-
-    const pass = localStorage.getItem(`pass`);
-    if (pass) {
-        const element = document.getElementById(`password`);
-        element.value = pass;
-    }
 });
 
 const login = async () => {
@@ -19,16 +13,10 @@ const login = async () => {
         // show validation error
         return;
     }
-    const passwordElement = document.getElementById(`password`);
-    var isPasswordValid = passwordElement.reportValidity();
-    if (!isPasswordValid){
-        // show validation error
-        return;
-    }
+   
 
     const email = emailElement.value;
     localStorage.setItem(`user`, email);
-    localStorage.setItem(`password`, passwordElement.value);
 
     const token = `user:${email}`;
     await glue42gd.authDone({

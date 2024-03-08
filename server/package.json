@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/kirilpopov/server-example#readme",
   "dependencies": {
-    "@glue42/server": "*",
+    "@glue42/server": "^1.1.1",
     "@glue42/server-api": "*"
   },
-  "devDependencies": {    
+  "devDependencies": {
     "typescript": "^4.6.2"
   }
 }
