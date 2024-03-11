@@ -8,12 +8,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 const login = async () => {
     const emailElement = document.getElementById(`email`);
-    var isEmailValid = emailElement.reportValidity();
+    const isEmailValid = emailElement.reportValidity();
     if (!isEmailValid){
         // show validation error
         return;
     }
-   
 
     const email = emailElement.value;
     localStorage.setItem(`user`, email);
