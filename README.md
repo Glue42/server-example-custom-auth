@@ -37,7 +37,7 @@ You will then need to configure io.Connect Desktop to connect to the server and 
 To do this you should edit the *system.json* file of io.Connect Desktop located in *%LocalAppData%\interop.io\io.Connect Desktop\config*
 
 **To connect to io.Manager Server:**
-To configure io.Connect Desktop to connect to the example server, use the "server" top-level key. Add the following configuration to enable connection to the Glue42 Server:
+To configure io.Connect Desktop to connect to the example server, use the "server" top-level key. Add the following configuration to enable connection to the io.Manager Server:
 
 ```json
 {
@@ -51,9 +51,9 @@ To configure io.Connect Desktop to connect to the example server, use the "serve
 }
 ```
 
-This will add the Server as an additional application store. If you want the Glue42 Server to be the only app store, set the "appStores" top-level key to an empty array.
+This will add the Server as an additional application store. If you want the io.Manager Server to be the only app store, set the "appStores" top-level key to an empty array.
 
-This will also instruct io.Connect Desktop to store Layouts and Application Preferences on the Glue42 Server.
+This will also instruct io.Connect Desktop to store Layouts and Application Preferences on the io.Manager Server.
 
 **To use a custom login screen:**
 To enable the custom login screen, use the "ssoAuth" top-level key
