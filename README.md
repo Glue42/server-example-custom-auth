@@ -91,10 +91,18 @@ To remove the default app stores, set the "appStores" top-level key to an empty 
 
 ## Protecting the Admin UI with a login page
 
-Users that belong to a special group (**GLUE42_SERVER_ADMIN**) can access administrative APIs and therefore use the administrative UI.
+In this example the Administrative UI is customized with a [custom **authenticator**](./admin-ui/src/auth.ts). The authenticator re-directs to the login page. After the user log-ins the login sends back the generated token as a query param. Then **Admin UI** then uses this token for calls to the server.
+**Note that this example is for demonstrative purposes and should not be used in production.**
 
-In this example the Administrative UI is customized with a [custom **authenticator**](./admin-ui/src/auth.ts) that always produces a token with for a user that is part of that group.
-
-In a real world scenario you would need to implement a real **authenticator** or define the administrative UI as an application in Glue42 and access it from there.
+To access **Admin UI** users must belong to a special group (**GLUE42_SERVER_ADMIN**). Check [data.ts](./server/src/data.ts) for the list of users that have that group and use one of them to login.
 
 To start the Admin UI follow the [instructions](./admin-ui/README.md) in the admin-ui folder.
+
+In a real world scenario you have the following options to protect admin-ui:
+
+1. Implement a custom authenticator;
+   1. Implement a custom login react based login component that will authenticate the user against an in-house service and provide the token to the custom authenticator
+   2. Re-use existing login page and extract the token in the custom authenticator once the user is authenticated
+   
+2. Put the Admin UI behind a reverse proxy that would handle the authentication and pass the user info to the server
+
