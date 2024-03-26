@@ -11,15 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/kirilpopov/server-example.git"
   },
-  "author": "Kiril Popov",
+  "author": "interop.io",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kirilpopov/server-example/issues"
+    "url": "https://github.com/InteropIO/manager-example-custom-auth"
   },
-  "homepage": "https://github.com/kirilpopov/server-example#readme",
+  "homepage": "https://github.com/InteropIO/manager-example-custom-auth#readme",
   "dependencies": {
-    "@glue42/server": "^1.1.1",
-    "@glue42/server-api": "*"
+    "@glue42/server-api": "*",
+    "@interopio/manager": "^1.2.0",
+    "@interopio/manager-api": "^2.0.0"
   },
   "devDependencies": {
     "typescript": "^4.6.2"

@@ -1,4 +1,4 @@
-import { AuthProvider } from "@glue42/server-admin-ui";
+import { AuthProvider } from "@interopio/manager-admin-ui";
 
 export class CustomAuthProvider implements AuthProvider {
   public isLoading = false;

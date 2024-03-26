@@ -1,5 +1,5 @@
-import { CustomAuthenticator } from "@glue42/server";
-import { User, Token } from "@glue42/server-api";
+import { CustomAuthenticator } from "@interopio/manager";
+import { User, Token } from "@interopio/manager-api";
 import { Request, Response } from "express";
 import { users } from "./data";
 

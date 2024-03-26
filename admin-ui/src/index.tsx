@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import AdminUI from '@glue42/server-admin-ui';
+import AdminUI from '@interopio/manager-admin-ui';
 import '@glue42/theme';
 import '@glue42/theme/dist/packages/rc-select.css';
-import "@glue42/server-admin-ui/dist/src/styles/index.css";
+import "@interopio/manager-admin-ui/dist/src/styles/index.css";
 import "@ag-grid-community/core/dist/styles/ag-grid.css";
 import { CustomAuthProvider } from './auth';
 require('react-dom');

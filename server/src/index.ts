@@ -1,4 +1,4 @@
-import { start, Config } from "@glue42/server";
+import { start, Config } from "@interopio/manager";
 import { Authenticator } from "./authenticator";
 import { Groups } from "./groups";
 

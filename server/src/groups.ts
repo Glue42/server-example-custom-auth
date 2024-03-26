@@ -1,6 +1,6 @@
-import { DataRequest, DataResult, Group, GroupsFeatures, User } from "@glue42/server-api";
-import { GroupsService } from "@glue42/server/src/services/groups/groups";
-import { AuditBuilder } from "@glue42/server/src/services/audit/builder";
+import { DataRequest, DataResult, Group, GroupsFeatures, User } from "@interopio/manager-api";
+import { GroupsService } from "@interopio/manager/src/services/groups/groups";
+import { AuditBuilder } from "@interopio/manager/src/services/audit/builder";
 import { groups, users } from "./data";
 
 
