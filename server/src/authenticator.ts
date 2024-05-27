@@ -23,7 +23,7 @@ export class Authenticator implements CustomAuthenticator {
             return;
         }
 
-        const userId = tokenFromRequest?.replace(`user:`, ``);
+        const userEmail = tokenFromRequest?.replace(`user:`, ``);
 
         // validate the token 
         if (!this.validateToken(tokenFromRequest)) {
@@ -36,7 +36,7 @@ export class Authenticator implements CustomAuthenticator {
         }
 
         // in this dummy example the token is actually the username, so we to try to find the user based on it
-        const user = users.find(u => u.id === userId);
+        const user = users.find(u => u.email === userEmail);
         if (!user) {
             next({
                 name: "UnauthorizedError",
