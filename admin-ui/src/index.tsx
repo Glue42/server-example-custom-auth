@@ -7,8 +7,6 @@ import '@interopio/theme-demo-apps/dist/packages/rc-select.css';
 import "@interopio/manager-admin-ui/dist/src/styles/index.css";
 import "@ag-grid-community/core/dist/styles/ag-grid.css";
 import { CustomAuthProvider } from './auth';
-require('react-dom');
-
 
 ReactDOM.render(
   <React.StrictMode>

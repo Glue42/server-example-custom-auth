@@ -1,6 +1,4 @@
 .npmrc
 node_modules
 logs
-**/**/*.js
-**/**/*.map
 .idea

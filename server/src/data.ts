@@ -1,4 +1,4 @@
-import { User, Token } from "@interopio/manager-api";
+import { User } from "@interopio/manager-api";
 
 export const GROUP_SERVER_ADMIN = "GLUE42_SERVER_ADMIN";
 export const GROUP_FRONT_OFFICE = "Front Office";

@@ -9,6 +9,11 @@ export class CustomAuthProvider implements AuthProvider {
   public error: any = undefined;
   public token: string = "";
 
+  /**
+   * Set to `true` as fields are only updated during the execution of the methods defined in `AuthProvider`.
+   */
+  public disablePeriodicChangeDetection: boolean = true;
+
   public async loginIfNeeded(): Promise<void> {
     // get token query parameter
     const urlParams = new URLSearchParams(window.location.search);
@@ -32,7 +37,7 @@ export class CustomAuthProvider implements AuthProvider {
 
   public async getUserInfo(): Promise<{ id?: string | undefined; } | undefined> {
     return {
-      id: this.token
+      id: this.token.substring("user:".length)
     };
   }
 
